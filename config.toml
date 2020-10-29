@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://www.ebackman.net"
 languageCode = "en-us"
 theme = "m10c"
 title = "ebackman.net"
