@@ -1,0 +1,11 @@
+#+HUGO_BASE_DIR: ../
+#+HUGO_SECTION: posts
+#+HUGO_WEIGHT: 2001
+
+#+TITLE: Hello world
+#+DATE: <2020-10-29 Thu>
+This is the first of hopefully many posts to come.
+
+I've come to realise that that I spend just about as much time thinking about programming as I do
+actually programming. I also love sharing these thoughts with other people, unfortunately I often end up rambling as
+I try to say everything at once. By starting a blog I hope to convey my thoughts in a more well thought-out manner.
