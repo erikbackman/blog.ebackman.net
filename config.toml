@@ -1,4 +1,6 @@
-baseurl = "https://www.ebackman.net"
+#baseurl = "https://www.ebackman.net"
+baseurl = "erikbackman.github.io/blog.ebackman.net"
+publishDir = "docs"
 languageCode = "en-us"
 theme = "m10c"
 title = "ebackman.net"

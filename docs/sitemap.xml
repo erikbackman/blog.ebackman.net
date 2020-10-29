@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>erikbackman.github.io/blog.ebackman.net/posts/hello-world/</loc>
+    <lastmod>2020-10-29T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>erikbackman.github.io/blog.ebackman.net/</loc>
+    <lastmod>2020-10-29T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>erikbackman.github.io/blog.ebackman.net/posts/</loc>
+    <lastmod>2020-10-29T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>erikbackman.github.io/blog.ebackman.net/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>erikbackman.github.io/blog.ebackman.net/tags/</loc>
+  </url>
+  
+</urlset>
