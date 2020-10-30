@@ -1,6 +1,5 @@
-#baseurl = "https://www.ebackman.net"
-baseurl = "erikbackman.github.io/blog.ebackman.net/"
-publishDir = "docs"
+baseurl = "https://www.blog.ebackman.net"
+publishDir = "public"
 languageCode = "en-us"
 theme = "m10c"
 title = "ebackman.net"
@@ -12,9 +11,9 @@ title = "ebackman.net"
   weight = 1
 
 [params]
-author = "Erik Bäckman"
-avatar = "images/avatar.png"
-description = "My thoughts on programming, emacs and more"
+  author = "Erik Bäckman"
+  avatar = "images/avatar.png"
+  description = "My thoughts on programming, emacs and more"
 
 [params.style]
   darkestColor = "#111213"
