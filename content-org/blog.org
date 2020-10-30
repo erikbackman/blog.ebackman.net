@@ -2,8 +2,11 @@
 #+HUGO_SECTION: posts
 #+HUGO_WEIGHT: 2001
 
-#+TITLE: Hello world
-#+DATE: <2020-10-29 Thu>
+* Hello World!
+:PROPERTIES:
+:EXPORT_FILE_NAME: hello-world
+:EXPORT_DATE: <2020-10-29 Thu>
+:END:
 This is the first of hopefully many posts to come.
 
 I've come to realise that I spend just about as much time thinking about programming as I do
