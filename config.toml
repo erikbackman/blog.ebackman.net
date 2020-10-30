@@ -17,7 +17,7 @@ title = "ebackman.net"
 
 [params.style]
   darkestColor = "#111213"
-  darkColor = "#1D1F20"
+  darkColor = "#16171A"
   primaryColor = "#907ACD"
   lightColor = "#DFE0E2"
   lightestColor = "#fff"
