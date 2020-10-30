@@ -45,3 +45,8 @@ title = "ebackman.net"
 [[params.social]]
   name = "linkedin"
   url = "https://www.linkedin.com/in/erba"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
