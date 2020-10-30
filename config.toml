@@ -5,10 +5,22 @@ theme = "m10c"
 title = "ebackman.net"
 
 [[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
   identifier = "tags"
   name = "Tags"
   url = "/tags/"
-  weight = 1
+  weight = 2
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 3
 
 [params]
   author = "Erik Bäckman"
