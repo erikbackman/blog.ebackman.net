@@ -3,7 +3,7 @@
 #+EXPORT_HUGO_FILE_NAME: about
 
 #+TITLE: About
-I am a self-taught programmer currently working at [[https:learningwell.se][LearningWell]] in Sweden.
+I am a self-taught programmer currently working at [[https://learningwell.se][LearningWell]] in Sweden.
 
 I would label myself as somewhat of a polyglot programmer, I love learning and getting a new perspective on things.
 That said, I strongly prefer functional programming languages and in particular Haskell.
