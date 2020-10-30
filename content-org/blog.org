@@ -2,7 +2,7 @@
 #+HUGO_SECTION: posts
 #+HUGO_WEIGHT: 2001
 
-* Blog Ideas
+* Posts
 ** DONE Hello World!
 :PROPERTIES:
 :EXPORT_FILE_NAME: hello-world
