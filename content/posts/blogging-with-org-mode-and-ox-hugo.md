@@ -40,9 +40,13 @@ For a more detailed answer please refer to <https://ox-hugo.scripter.co/doc/why-
 -   Capturing new post ideas as Org Todo entries using [Org Capture](https://orgmode.org/manual/Capture.html) and having them
     be exported once they are marked as being `DONE`.
 
--   Comfortable and distraction free writing experience using [writeroom mode](https://github.com/joostkremers/writeroom-mode) together with [mixed-pitch mode](https://gitlab.com/jabranham/mixed-pitch).
+-   Support for tables and forumlas.
 
-    {{< figure src="/images/zenmode.png" caption="Figure 1: Writeroom mode and mixed-pitch mode" >}}
+Finally there are a couple of modes avialable for emacs that allows for a
+comfortable and distraction free writing experience for example [writeroom mode](https://github.com/joostkremers/writeroom-mode)
+and [mixed-pitch mode](https://gitlab.com/jabranham/mixed-pitch)
+
+{{< figure src="/images/zenmode.png" caption="Figure 1: Writeroom mode and mixed-pitch mode" >}}
 
 
 ## AWS CloudFront and Hugo {#aws-cloudfront-and-hugo}

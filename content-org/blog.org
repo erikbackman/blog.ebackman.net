@@ -51,9 +51,13 @@ For a more detailed answer please refer to https://ox-hugo.scripter.co/doc/why-o
 - Capturing new post ideas as Org Todo entries using [[https://orgmode.org/manual/Capture.html][Org Capture]] and having them
   be exported once they are marked as being =DONE=.
 
-- Comfortable and distraction free writing experience using [[https://github.com/joostkremers/writeroom-mode][writeroom mode]] together with [[https://gitlab.com/jabranham/mixed-pitch][mixed-pitch mode]].
-  #+CAPTION: Writeroom mode and mixed-pitch mode
-  [[file:../static/images/zenmode.png]]
+- Support for tables and forumlas.
+
+Finally there are a couple of modes avialable for emacs that allows for a
+comfortable and distraction free writing experience for example [[https://github.com/joostkremers/writeroom-mode][writeroom mode]]
+and [[https://gitlab.com/jabranham/mixed-pitch][mixed-pitch mode]]
+#+CAPTION: Writeroom mode and mixed-pitch mode
+[[file:../static/images/zenmode.png]]
 
 *** AWS CloudFront and Hugo
 I decided to host the on AWS using S3, one of the gotchas I encountered was that
@@ -61,6 +65,7 @@ CloudFront does not support returning default root objects in subdirectories and
 so links like =example.com/posts/hello-world= does not work.
 The fix I ended up using was to assign a lambda function to incoming requests
 so that requests for paths that end in =/= are rewritten into =/index.html=
+
 ** TODO A response to Rich Hickey
 :PROPERTIES:
 :EXPORT_FILE_NAME: a-response-to-rich-hickey
