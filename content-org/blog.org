@@ -17,6 +17,7 @@ I try to say everything at once. By starting a blog I hope to convey my thoughts
 ** DONE Blogging with Emacs Org-mode and ox-hugo :emacs:org:
 :PROPERTIES:
 :EXPORT_FILE_NAME: blogging-with-org-mode-and-ox-hugo
+:EXPORT_DATE: <2020-11-01 Sun>
 :END:
 *** Workflow and tools
 I love Emacs and think it's an amazing piece of software that prefectly captures
