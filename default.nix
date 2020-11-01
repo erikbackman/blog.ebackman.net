@@ -3,6 +3,7 @@ let
   tools = with pkgs; [
     hugo
     gnumake
+    ghc
   ];
 in
 pkgs.mkShell {

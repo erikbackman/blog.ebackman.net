@@ -1,6 +1,7 @@
 #+HUGO_BASE_DIR: ../
 #+HUGO_SECTION: posts
 #+HUGO_WEIGHT: 2001
+#+OPTIONS: tex:t
 
 * Posts
 ** DONE Hello World!
@@ -13,3 +14,61 @@ This is the first of hopefully many posts to come.
 I've come to realise that I spend just about as much time thinking about programming as I do
 actually programming. I also love sharing these thoughts with other people, unfortunately I often end up rambling as
 I try to say everything at once. By starting a blog I hope to convey my thoughts in a more well thought-out manner.
+** DONE Blogging with Emacs Org-mode and ox-hugo :emacs:org:
+:PROPERTIES:
+:EXPORT_FILE_NAME: blogging-with-org-mode-and-ox-hugo
+:END:
+*** Workflow and tools
+I love Emacs and think it's an amazing piece of software that prefectly captures
+the essence of what free software is all about.
+
+One of the most popular packages for emacs is [[https://orgmode.org][Org mode]] which is described as:
+#+begin_quote
+a mode for keeping notes, maintaining TODO lists, and project planning with a
+fast and effective plain-text markup language. It also is an authoring system
+with unique support for literate programming and reproducible research.
+#+end_quote
+
+And so naturally when I decided to start a blog I wanted to use Emacs and Org mode.
+There are a few [[https://orgmode.org/tools.html][tools]] available for blogging with Org mode and I ended up going with [[https://gohugo.io][Hugo]]
+and [[https://ox-hugo.scripter.co/][ox-hugo]].
+
+Hugo already has support for Org it is however very limited support and thats
+where ox-hugo comes in.
+Ox-hugo is an Org exporter backend that exports Org to Hugo-compatible markdown.
+
+So now one might be thinking, why not just use markdown?
+The simple answer is: because of Org mode, which is far more feature rich and
+powerful than any markdown tool currently available - at least that I know off.
+
+For a more detailed answer please refer to https://ox-hugo.scripter.co/doc/why-ox-hugo/
+
+*A few of my favorite  reasons are:*
+- Being able to directly include source code snippets from external files and
+  running these snippets using [[https://orgmode.org/worg/org-contrib/babel/][Org Babel]]
+
+- Capturing new post ideas as Org Todo entries using [[https://orgmode.org/manual/Capture.html][Org Capture]] and having them
+  be exported once they are marked as being =DONE=.
+
+- Comfortable and distraction free writing experience using [[https://github.com/joostkremers/writeroom-mode][writeroom mode]] together with [[https://gitlab.com/jabranham/mixed-pitch][mixed-pitch mode]].
+  #+CAPTION: Writeroom mode and mixed-pitch mode
+  [[file:../static/images/zenmode.png]]
+
+*** AWS CloudFront and Hugo
+I decided to host the on AWS using S3, one of the gotchas I encountered was that
+CloudFront does not support returning default root objects in subdirectories and
+so links like =example.com/posts/hello-world= does not work.
+The fix I ended up using was to assign a lambda function to incoming requests
+so that requests for paths that end in =/= are rewritten into =/index.html=
+** TODO A response to Rich Hickey
+:PROPERTIES:
+:EXPORT_FILE_NAME: a-response-to-rich-hickey
+:END:
+** TODO Why I no longer get OOP
+:PROPERTIES:
+:EXPORT_FILE_NAME: why-i-no-longer-get-oop
+:END:
+** TODO Primitive Obsession
+:PROPERTIES:
+:EXPORT_FILE_NAME: primitive-obsession
+:END:
