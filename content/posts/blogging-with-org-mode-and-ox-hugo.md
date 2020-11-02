@@ -27,26 +27,25 @@ where ox-hugo comes in.
 Ox-hugo is an Org exporter backend that exports Org to Hugo-compatible markdown.
 
 So now one might be thinking, why not just use markdown?
-The simple answer is: because of Org mode, which is far more feature rich and
-powerful than any markdown tool currently available - at least that I know off.
+The simple answer is: because of Org mode, which is so much more than just editor support for org as a markup language.
+
+Let me give you a few examples:
+
+-   You can write snippets of source-code in the middle of an org document and have access to the same intellisense and syntax highlighting you normally would then run those snippets directly using [Org-Babel](https://orgmode.org/worg/org-contrib/babel/).
+
+-   Org mode also has support for tables and even formulas, no more fiddling with ascii tables manually.
+
+-   Use [Org Capture](https://orgmode.org/manual/Capture.html) to quickly capture new ideas into a blog post entry and set it's status as `TODO` then later have it be automatically exporterd once it's `DONE`
 
 For a more detailed answer please refer to <https://ox-hugo.scripter.co/doc/why-ox-hugo/>
-
-**A few of my favorite  reasons are:**
-
--   Being able to directly include source code snippets from external files and
-    running these snippets using [Org Babel](https://orgmode.org/worg/org-contrib/babel/)
-
--   Capturing new post ideas as Org Todo entries using [Org Capture](https://orgmode.org/manual/Capture.html) and having them
-    be exported once they are marked as being `DONE`.
-
--   Support for tables and forumlas.
 
 Finally there are a couple of modes avialable for emacs that allows for a
 comfortable and distraction free writing experience for example [writeroom mode](https://github.com/joostkremers/writeroom-mode)
 and [mixed-pitch mode](https://gitlab.com/jabranham/mixed-pitch)
 
 {{< figure src="/images/zenmode.png" caption="Figure 1: Writeroom mode and mixed-pitch mode" >}}
+
+One of Emacs greatest strengths is being able to combine many different tools into one integrated computing environment and this includes Org mode.
 
 
 ## AWS CloudFront and Hugo {#aws-cloudfront-and-hugo}
