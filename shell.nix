@@ -4,6 +4,7 @@ let
     hugo
     gnumake
     ghc
+    hello
   ];
 in
 pkgs.mkShell {
