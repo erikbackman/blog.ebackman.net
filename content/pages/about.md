@@ -1,6 +1,7 @@
 +++
 title = "About"
 author = ["Erik Bäckman"]
+date = 2020-11-18T00:00:00+01:00
 draft = false
 weight = 2001
 noauthor = true

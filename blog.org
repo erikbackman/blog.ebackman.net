@@ -11,6 +11,7 @@
 ** DONE About
 :PROPERTIES:
 :EXPORT_FILE_NAME: about
+:EXPORT_DATE: <2020-11-18 Wed>
 :END:
 I'm a self-taught programmer currently working at [[https://learningwell.se][LearningWell]] in Sweden.
 
