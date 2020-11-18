@@ -2,7 +2,7 @@
 title = "Blogging with Emacs Org-mode and ox-hugo"
 author = ["Erik Bäckman"]
 date = 2020-11-18T00:00:00+01:00
-tags = ["emacs", "org"]
+tags = ["emacs", "org", "hugo"]
 draft = false
 +++
 

@@ -5,8 +5,8 @@ theme = "m10c"
 title = "ebackman.net"
 
 [[menu.main]]
-  identifier = "home"
-  name = "Home"
+  identifier = "posts"
+  name = "Posts"
   url = "/"
   weight = 1
 

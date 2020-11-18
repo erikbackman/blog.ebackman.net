@@ -157,6 +157,8 @@ it possible to mix fixed-pitched and variable-pitch fonts in the same buffer.
 
 This is what it ends up looking like:
 [[file:./static/images/writeroom.png]]
+** TODO OOP
+*** Some heading
 
 ** TODO Primitive Obsession
 :PROPERTIES:
