@@ -2,9 +2,18 @@
 title = "About"
 author = ["Erik Bäckman"]
 draft = false
+weight = 2001
+noauthor = true
+nocomment = true
+nodate = true
+nopaging = true
+noread = true
+[menu.main]
+  weight = 2001
+  identifier = "about"
 +++
 
-I am a self-taught programmer currently working at [LearningWell](https://learningwell.se) in Sweden.
+I'm a self-taught programmer currently working at [LearningWell](https://learningwell.se) in Sweden.
 
 I would label myself as somewhat of a polyglot programmer, I love learning and getting a new perspective on things.
 That said, I strongly prefer functional programming languages and in particular Haskell.

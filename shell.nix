@@ -5,6 +5,7 @@ let
     gnumake
     ghc
     hello
+    tree
   ];
 in
 pkgs.mkShell {

@@ -16,12 +16,6 @@ title = "ebackman.net"
   url = "/tags/"
   weight = 2
 
-[[menu.main]]
-  identifier = "about"
-  name = "About"
-  url = "/about/"
-  weight = 3
-
 [params]
   author = "Erik Bäckman"
   avatar = "images/avatar2.png"

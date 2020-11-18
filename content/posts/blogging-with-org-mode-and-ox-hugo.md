@@ -1,13 +1,10 @@
 +++
 title = "Blogging with Emacs Org-mode and ox-hugo"
 author = ["Erik Bäckman"]
-date = 2020-11-01T00:00:00+01:00
+date = 2020-11-18T00:00:00+01:00
 tags = ["emacs", "org"]
 draft = false
-weight = 2001
 +++
-
-## Workflow and tools {#workflow-and-tools}
 
 I love Emacs and think it's an amazing piece of software that prefectly captures
 the essence of what free software is all about.
@@ -26,32 +23,116 @@ Hugo already has support for Org it is however very limited support and thats
 where ox-hugo comes in.
 Ox-hugo is an Org exporter backend that exports Org to Hugo-compatible markdown.
 
-So now one might be thinking, why not just use markdown?
-The simple answer is: because of Org mode, which is so much more than just editor support for org as a markup language.
 
-Let me give you a few examples:
+## The setup {#the-setup}
 
--   You can write snippets of source-code in the middle of an org document and have access to the same intellisense and syntax highlighting you normally would then run those snippets directly using [Org-Babel](https://orgmode.org/worg/org-contrib/babel/).
+**Project Structure**
 
--   Org mode also has support for tables and even formulas, no more fiddling with ascii tables manually.
+```bash
+tree -L 2 --dirsfirst
+```
 
--   Use [Org Capture](https://orgmode.org/manual/Capture.html) to quickly capture new ideas into a blog post entry and set it's status as `TODO` then later have it be automatically exporterd once it's `DONE`
+```bash
+.
+├── content
+│   ├── pages
+│   └── posts
+├── static
+│   └── images
+├── themes
+│   └── m10c
+├── blog.org
+├── config.toml
+```
 
-For a more detailed answer please refer to <https://ox-hugo.scripter.co/doc/why-ox-hugo/>
+This is pretty much the structure you end up with after running `hugo new`.
 
-Finally there are a couple of modes avialable for emacs that allows for a
-comfortable and distraction free writing experience for example [writeroom mode](https://github.com/joostkremers/writeroom-mode)
-and [mixed-pitch mode](https://gitlab.com/jabranham/mixed-pitch)
+In the root of the project I have a file called `blog.org` which contains all my
+posts as well as the pages on my blog such as the about page.
 
-{{< figure src="/images/zenmode.png" caption="Figure 1: Writeroom mode and mixed-pitch mode" >}}
+**blog.org**
 
-One of Emacs greatest strengths is being able to combine many different tools into one integrated computing environment and this includes Org mode.
+```org
+#+HUGO_BASE_DIR: .
+#+HUGO_SECTION: posts
+
+* Pages
+:PROPERTIES:
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :noauthor true :nocomment true :nodate true :nopaging true :noread true
+:EXPORT_HUGO_MENU: :menu main
+:EXPORT_HUGO_SECTION: pages
+:EXPORT_HUGO_WEIGHT: auto
+:END:
+** DONE About
+:PROPERTIES:
+:EXPORT_FILE_NAME: about
+:END:
+I'm a self-taught programmer currently working at [[https://learningwell.se][LearningWell]] in Sweden.
+...
+* Posts
+** DONE Hello World!
+:PROPERTIES:
+:EXPORT_FILE_NAME: hello-world
+:EXPORT_DATE: <2020-10-29 Thu>
+:END:
+This is the first of hopefully many posts to come.
+...
+```
+
+In the above snippet we can see that the default `HUGO_SECTION` is set to
+`posts` resulting in entries being exported to `content/posts/<filename.md>`,
+the `Pages` heading overrides this setting, making any of it's sub-headings
+instead be exported to `content/pages/<filename.md>`, in addition these entries
+will show up in the main menu.
 
 
-## AWS CloudFront and Hugo {#aws-cloudfront-and-hugo}
+## Workflow {#workflow}
+
+My usual workflow looks like this:
+
+1.  Think of an idea for a new post, use [Org Capture](https://orgmode.org/manual/Capture.html) to quickly capture this idea into a new post and save it as a new `TODO` entry under the `Posts` heading in `blog.org`
+2.  After finishing the post I change it's state to `DONE` which will trigger the `org-hugo-export-to-md` any time I save the post.
+
+Here's the code that adds a Hugo template to Org Capture:
+
+```emacs-lisp
+(with-eval-after-load 'org-capture
+  (defun new-hugo-post (title)
+    (s-join "\n" `(,(concat "* TODO " title)
+                   ":PROPERTIES:"
+                   ,(concat ":EXPORT_FILE_NAME: " (org-hugo-slug title))
+                   ":END:"
+                   "%?\n")))
+
+  (defun org-hugo-new-subtree-post-capture-template ()
+    "Returns `org-capture' template string for new Hugo post. "
+    (let* ((title (read-from-minibuffer "Post Title: ")))
+      (new-hugo-post title)))
+
+  (add-to-list 'org-capture-templates
+               '("h"
+                 "Hugo post"
+                 entry
+                 (file+olp "blog.org" "Posts")
+                 (function org-hugo-new-subtree-post-capture-template))))
+```
+
+
+## Hosting {#hosting}
 
 I decided to host the on AWS using S3, one of the gotchas I encountered was that
 CloudFront does not support returning default root objects in subdirectories and
-so links like `example.com/posts/hello-world` does not work.
-The fix I ended up using was to assign a lambda function to incoming requests
-so that requests for paths that end in `/` are rewritten into `/index.html`
+so links like `example.com/posts/hello-world` does not work. The fix I ended up
+using was to assign a lambda function to incoming requests so that requests for
+paths that end in `/` are rewritten into `/index.html`
+
+
+## Useful packages {#useful-packages}
+
+I want to mention a few packages that I use to get a more comfortable and
+distraction free writing experience. The main one is [writeroom mode](https://github.com/joostkremers/writeroom-mode) which adds a
+mode for distraction-free writing, the other one is [mixed-pitch mode](https://gitlab.com/jabranham/mixed-pitch) which makes
+it possible to mix fixed-pitched and variable-pitch fonts in the same buffer.
+
+This is what it ends up looking like:
+![](/images/writeroom.png)
